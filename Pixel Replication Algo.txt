@@ -1,0 +1,51 @@
+Method 1: Pixel replication:
+INTRODUCTION:
+It is also known as Nearest neighbor interpolation. As its name suggest , in this method , we just replicate the neighboring pixels. As we have already discussed in the tutorial of Sampling , that zooming is nothing but increase amount of sample or pixels. This algorithm works on the same principle.
+
+
+WORKING:
+In this method we create new pixels form the already given pixels. Each pixel is replicated in this method n times row wise and column wise and you got a zoomed image. Its as simple as that.
+
+
+FOR EXAMPLE:
+if you have an image of 2 rows and 2 columns and you want to zoom it twice or 2 times using pixel replication, here how it can be done.
+
+For a better understanding , the image has been taken in the form of matrix with the pixel values of the image.
+
+
+1	2
+3	4
+
+The above image has two rows and two columns, we will first zoom it row wise.
+
+
+ROW WISE ZOOMING:
+When we zoom it row wise , we will just simple copy the rows pixels to its adjacent new cell.
+
+Here how it would be done.
+
+1	1	2	2
+3	3	4	4
+
+As you can that in the above matrix , each pixel is replicated twice in the rows.
+
+COLUMN SIZE ZOOMING:
+The next step is to replicate each of the pixel column wise, that we will simply copy the column pixel to its adjacent new column or simply below it.
+
+Here how it would be done.
+
+1	1	2	2
+1	1	2	2
+3	3	4	4
+3	3	4	4
+NEW IMAGE SIZE:
+As it can be seen from the above example , that an original image of 2 rows and 2 columns has been converted into 4 rows and 4 columns after zooming. That means the new image has a dimensions of
+
+(Original image rows * zooming factor, Original Image cols * zooming factor)
+
+ADVANTAGE AND DISADVANTAGE:
+One of the advantage of this zooming technique is , it is very simple. You just have to copy the pixels and nothing else.
+
+The disadvantage of this technique is that image got zoomed but the output is very blurry. And as the zooming factor increased , the image got more and more blurred. That would eventually result in fully blurred image.
+
+Source: http://www.tutorialspoint.com/dip/Zooming_Methods.htm

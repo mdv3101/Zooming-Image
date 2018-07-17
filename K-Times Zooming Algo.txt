@@ -1,0 +1,68 @@
+K-Times zooming
+INTRODUCTION:
+K times is the third zooming method we are going to discuss. It is one of the most perfect zooming algorithm discussed so far. It caters the challenges of both twice zooming and pixel replication. K in this zooming algorithm stands for zooming factor.
+
+WORKING:
+It works like this way.
+
+First of all , you have to take two adjacent pixels as you did in the zooming twice. Then you have to subtract the smaller from the greater one. We call this output (OP).
+
+Divide the output(OP) with the zooming factor(K). Now you have to add the result to the smaller value and put the result in between those two values.
+
+Add the value OP again to the value you just put and place it again next to the previous putted value. You have to do it till you place k-1 values in it.
+
+Repeat the same step for all the rows and the columns , and you get a zoomed images.
+
+FOR EXAMPLE:
+Suppose you have an image of 2 rows and 3 columns , which is given below. And you have to zoom it thrice or three times.
+
+15	30	15
+30	15	30
+K in this case is 3. K = 3.
+
+The number of values that should be inserted is k-1 = 3-1 = 2.
+
+ROW WISE ZOOMING
+Take the first two adjacent pixels. Which are 15 and 30.
+
+Subtract 15 from 30.	30-15 = 15.
+
+Divide 15 by k.	15/k = 15/3 = 5.	We call it OP.(where op is just a name)
+
+Add OP to lower number.	15 + OP = 15 + 5 = 20.
+
+Add OP to 20 again.	20 + OP = 20 + 5 = 25.
+
+We do that 2 times because we have to insert k-1 values.
+
+Now repeat this step for the next two adjacent pixels. It is shown in the first table.
+
+After inserting the values , you have to sort the inserted values in ascending order, so there remains a symmetry between them.
+
+It is shown in the second table
+
+TABLE 1.
+15	20	25	30	20	25	15
+30	20	25	15	20	25	30
+TABLE 2.
+Table2 
+COLUMN WISE ZOOMING
+The same procedure has to be performed column wise. The procedure include taking the two adjacent pixel values, and then subtracting the smaller from the bigger one. Then after that , you have to divide it by k. Store the result as OP. Add OP to smaller one, and then again add OP to the value that comes in first addition of OP. Insert the new values.
+
+Here what you got after all that.
+
+15	20	25	30	25	20	15
+20	21	21	25	21	21	20
+25	22	22	20	22	22	25
+30	25	20	15	20	25	30
+NEW IMAGE SIZE
+The best way to calculate the formula for the dimensions of a new image is to compare the dimensions of the original image and the final image. The dimensions of the original image were 2 X 3. And the dimensions of the new image are 4 x 7.
+
+The formula thus is:
+
+(K (number of rows minus 1) + 1) X (K (number of cols minus 1) + 1)
+
+ADVANTAGES AND DISADVANTAGES
+The one of the clear advantage that k time zooming algorithm has that it is able to compute zoom of any factor which was the power of pixel replication algorithm , also it gives improved result (less blurry) which was the power of zero order hold method. So hence It comprises the power of the two algorithms.
+
+The only difficulty this algorithm has that it has to be sort in the end , which is an additional step , and thus increases the cost of computation.
